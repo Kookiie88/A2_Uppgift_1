@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduktion till webbutveckling - uppgift 4</title>
+    <title>HTML/CSS A2 Uppgift 1</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>ToDo App för uppgift 4</h1>
-        <div>
-            <input type="text" id="taskInput" placeholder="Skriv en uppgift">
-            <button id="addTaskButton">Lägg till</button>
+        <h1>My ToDo</h1>
+        <p id="completedParagraph"><span id="completedTasks">0</span> completed</p>
+        <div id="input-div">
+            <input type="text" id="taskInput">
+            <button id="addTaskButton">OK</button>
         </div>
+        <span id="warning-message"></span>
         <ul id="taskList"></ul>
-        <p>Antal uppgifter gjorda: <span id="completedTasks">0</span></p>
     </div>    
     <script src="script.js"></script>
 </body>

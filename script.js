@@ -6,6 +6,7 @@ const taskInput = document.querySelector("#taskInput"); // Input-fältet där an
 const addTaskButton = document.querySelector("#addTaskButton"); // Knappen för att lägga till uppgifter
 const taskList = document.querySelector("#taskList"); // Listan där uppgifterna visas
 const completedTasks = document.querySelector("#completedTasks"); // Antalet klara uppgifter
+const warningMessage = document.querySelector("#warning-message");
 
 // Lägg till en klickhändelse på knappen för att lägga till uppgifter
 addTaskButton.addEventListener("click", addTask);
@@ -27,6 +28,7 @@ function addTask() {
         const listItem = document.createElement("li");
         const listItemText = document.createElement("p");
         listItemText.innerText = task.text;
+        listItem.classList.add('newly-added-item');
 
         // Lägg till en klickhändelse på uppgiften för att markera den som klar eller omvänt
         listItem.addEventListener("click", () => {
@@ -41,8 +43,7 @@ function addTask() {
 
         // Skapa en knapp (<span>) för att radera uppgiften
         const deleteButton = document.createElement("span");
-        deleteButton.classList.add("delete-button");
-        deleteButton.innerHTML = "&#128465;"; // Lägg till papperskorgsikonen
+        deleteButton.innerHTML = "🗑️"; // Lägg till papperskorgsikonen
         
         // Lägg till en klickhändelse på knappen för att ta bort uppgiften
         deleteButton.addEventListener("click", () => {
@@ -61,9 +62,12 @@ function addTask() {
 
         // Rensa input-fältet efter att uppgiften har lagts till
         taskInput.value = "";
+        warningMessage.classList.remove("blinking");
+        warningMessage.innerText = "";
     } else {
         // Visa ett meddelande om användaren försöker lägga till en tom uppgift
-        alert("Du måste skriva något!");
+        warningMessage.classList.add('blinking');
+        warningMessage.innerText = "Input must not be empty";
     }
 }
 
