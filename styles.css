@@ -85,7 +85,7 @@ button {
 
 #warning-message.blinking {
     animation-name: blink;
-    animation-duration: 0.4s;
+    animation-duration: 0.2s;
     animation-iteration-count: 3;
     animation-fill-mode: forwards; 
 }

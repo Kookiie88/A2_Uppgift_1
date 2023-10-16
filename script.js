@@ -62,12 +62,15 @@ function addTask() {
 
         // Rensa input-fältet efter att uppgiften har lagts till
         taskInput.value = "";
-        warningMessage.classList.remove("blinking");
         warningMessage.innerText = "";
+
     } else {
         // Visa ett meddelande om användaren försöker lägga till en tom uppgift
         warningMessage.classList.add('blinking');
         warningMessage.innerText = "Input must not be empty";
+        setTimeout(() => {
+            warningMessage.classList.remove("blinking"); 
+        }, 600);
     }
 }
 
