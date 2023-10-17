@@ -22,9 +22,8 @@ body {
     margin-top: 20px;
     padding: 20px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-
     animation-name: fadeSlideIn;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
 
 }
@@ -35,7 +34,7 @@ body {
     }
     50% {
         opacity: 0.7;
-        transform: translateY(50px);
+        transform: translateY(80px);
     }
     100% {
         opacity: 1;
@@ -43,16 +42,40 @@ body {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
 h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     text-align: center;
     padding-bottom: 20px;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+}
+
+#completedParagraph {
+    animation-name: fadeIn;
+    animation-duration: 0.75s;
+    animation-timing-function: ease;
 }
 
 #input-div {
     display: flex;
     margin-top: 20px;
+    animation-name: fadeIn;
+    animation-duration: 0.80s;
+    animation-timing-function: ease;
 }
 
 input[type="text"] {
