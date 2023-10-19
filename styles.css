@@ -151,6 +151,10 @@ li p:hover {
     text-decoration: line-through;
 }
 
+li span:hover {
+    filter: brightness(70%);
+}
+
 li.newly-added-item {
     animation-name: fadeInUp;
     animation-duration: 0.5s;
