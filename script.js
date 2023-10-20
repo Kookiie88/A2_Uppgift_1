@@ -2,11 +2,11 @@
 const tasks = [];
 
 // Hämta referenser till DOM-elementen
-const taskInput = document.querySelector("#taskInput"); // Input-fältet där användaren skriver uppgifter
-const addTaskButton = document.querySelector("#addTaskButton"); // Knappen för att lägga till uppgifter
-const taskList = document.querySelector("#taskList"); // Listan där uppgifterna visas
-const completedTasks = document.querySelector("#completedTasks"); // Antalet klara uppgifter
-const warningMessage = document.querySelector("#warning-message");
+const taskInput = document.querySelector(".inputDiv__taskInput"); // Input-fältet där användaren skriver uppgifter
+const addTaskButton = document.querySelector(".inputDiv__addTaskButton"); // Knappen för att lägga till uppgifter
+const taskList = document.querySelector(".container__taskList"); // Listan där uppgifterna visas
+const completedTasks = document.querySelector(".container__completedTasks"); // Antalet klara uppgifter
+const warningMessage = document.querySelector(".container__warningMessage");
 
 // Lägg till en klickhändelse på knappen för att lägga till uppgifter
 addTaskButton.addEventListener("click", addTask);
@@ -28,7 +28,7 @@ function addTask() {
         const listItem = document.createElement("li");
         const listItemText = document.createElement("p");
         listItemText.innerText = task.text;
-        listItem.classList.add('newly-added-item');
+        listItem.classList.add('taskList__newlyAddedItem');
 
         // Lägg till en klickhändelse på uppgiften för att markera den som klar eller omvänt
         listItem.addEventListener("click", () => {
@@ -66,10 +66,10 @@ function addTask() {
 
     } else {
         // Visa ett meddelande om användaren försöker lägga till en tom uppgift
-        warningMessage.classList.add('blinking');
+        warningMessage.classList.add('container__warningMessage--blinking');
         warningMessage.innerText = "Input must not be empty";
         setTimeout(() => {
-            warningMessage.classList.remove("blinking"); 
+            warningMessage.classList.remove("container__warningMessage--blinking"); 
         }, 600);
     }
 }

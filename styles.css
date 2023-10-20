@@ -22,12 +22,12 @@ body {
     margin-top: 20px;
     padding: 20px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    animation-name: fadeSlideIn;
+    animation-name: container--fadeSlideIn;
     animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
-
 }
-@keyframes fadeSlideIn {
+
+@keyframes container--fadeSlideIn {
     0% {
         opacity: 0;
         transform: translateY(-50px);
@@ -42,7 +42,31 @@ body {
     }
 }
 
-@keyframes fadeIn {
+.container__h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+    animation-name: container--fadeIn;
+    animation-duration: 0.9s;
+    animation-timing-function: ease;
+}
+
+.container__completedParagraph {
+    animation-name: container--fadeIn;
+    animation-duration: 0.95s;
+    animation-timing-function: ease;
+}
+
+.container__inputDiv {
+    display: flex;
+    margin-top: 20px;
+    animation-name: container--fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes container--fadeIn {
     0% {
         opacity: 0;
     }
@@ -52,33 +76,9 @@ body {
     100% {
         opacity: 1;
     }
-} 
-
-h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
-    text-align: center;
-    padding-bottom: 20px;
-    animation-name: fadeIn;
-    animation-duration: 0.9s;
-    animation-timing-function: ease;
 }
 
-#completedParagraph {
-    animation-name: fadeIn;
-    animation-duration: 0.95s;
-    animation-timing-function: ease;
-}
-
-#input-div {
-    display: flex;
-    margin-top: 20px;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-}
-
-input[type="text"] {
+.inputDiv__taskInput {
     width: 220px;
     font-size: 20px;
     margin-right: 5px;
@@ -87,11 +87,11 @@ input[type="text"] {
     border-radius: 3px;
 }
 
-input[type="text"]:focus {
+.inputDiv__taskInput:focus {
     outline: 1.5px solid blue;
 }
 
-button {
+.inputDiv__addTaskButton {
     font-size: 18px;
     font-weight: 500;
     padding: 5px 10px;
@@ -99,21 +99,21 @@ button {
     border-radius: 3px;
 }
 
-#warning-message {
+.container__warningMessage {
     font-style: italic;
     color: red;
     margin-top: 5px;
     
 }
 
-#warning-message.blinking {
-    animation-name: blink;
+.container__warningMessage--blinking {
+    animation-name: container__warningMessage--blink;
     animation-duration: 0.2s;
     animation-iteration-count: 3;
     animation-fill-mode: forwards; 
 }
 
-@keyframes blink {
+@keyframes container__warningMessage--blink {
     0% {
         opacity: 0;
     }
@@ -125,13 +125,13 @@ button {
     }
 }
 
-ul {
+.container__taskList {
     margin-top: 10px;
     list-style: none;
     padding: 0;
 }
 
-li {
+.container__taskList li {
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -140,28 +140,28 @@ li {
     overflow-wrap: anywhere;
 }
 
-li p {
+.container__taskList li p {
     font-size: 20px;
     margin: 0;
     padding-right: 5px;
     transition: color 1s;
 }
 
-li p:hover {
+.container__taskList li p:hover {
     text-decoration: line-through;
 }
 
-li span:hover {
+.container__taskList li span:hover {
     filter: brightness(70%);
 }
 
-li.newly-added-item {
-    animation-name: fadeInUp;
+li.taskList__newlyAddedItem {
+    animation-name: container__newlyAddedItem--fadeInUp;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes fadeInUp {
+@keyframes container__newlyAddedItem--fadeInUp {
     0% {
         opacity: 0;
         transform: translateY(20px);
